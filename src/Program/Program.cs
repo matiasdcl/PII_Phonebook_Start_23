@@ -7,6 +7,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
+            
             // Crear el contacto dueño
 
             // Crear la lista de contactos
