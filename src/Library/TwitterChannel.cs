@@ -1,14 +1,17 @@
 using System;
+using TwitterUCU;
 namespace Library
 {
     public class TwitterChannel : MessageChannel
     {   
-        public string Message {get; set;}
-        public TwitterChannel (string message){
-            this.Message = message;
+        private readonly TwitterMessage _api;
+        /*var twitter = new TwitterMessage();
+        twitter.SendMessage("Hola!", "<userId>");*/
+        public TwitterChannel (){
+            _api= new TwitterMessage();
         }
-        public void Send(string message){
-            Console.WriteLine (message);
+        public override void Send(string message, string destination){
+            _api.SendMessage(message, destination);
         }
     }
 }
